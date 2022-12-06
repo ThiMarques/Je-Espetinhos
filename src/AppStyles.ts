@@ -12,7 +12,11 @@ export const CategoriesContainer = styled.div`
 `;
 
 export const MenuContainer = styled.div`
-  flex: 1;
+  width: 100%;
+  display: grid;
+  column-gap: 8px;
+  row-gap: 8px;
+  grid-template-columns: 1fr 1fr;
 `;
 
 export const Footer = styled.div`

@@ -1,33 +1,4 @@
-export const Product1 = [
-  {
-    _id: '6372e040f52e37ef85fe2c5e',
-    name: 'Pizza quatro queijos',
-    description: 'Deliciosa pizza quatro queijos com borda simples',
-    imagePath: '1668476878984-quatro-queijos.png',
-    price: 40,
-    ingredients: [
-      {
-        name: 'Mussarela',
-        icon: '🧀',
-        _id: '6372e040f52e37ef85fe2c5f'
-      },
-      {
-        name: 'Parmesão',
-        icon: '🧀',
-        _id: '6372e040f52e37ef85fe2c60'
-      },
-      {
-        name: 'Gouda',
-        icon: '🧀',
-        _id: '6372e040f52e37ef85fe2c61'
-      },
-      {
-        name: 'Brie',
-        icon: '🧀',
-        _id: '6372e040f52e37ef85fe2c62'
-      }
-    ],
-  },
+export const productList = [
   {
     _id: '6372e276a381106c0f854cb3',
     name: 'Coca cola',
@@ -37,9 +8,33 @@ export const Product1 = [
     ingredients: [],
   },
   {
-    _id: '6372e276a381106c0f854cb3',
-    name: 'Coca cola',
-    description: 'Coca cola lata geladinha topzera',
+    _id: '019873812bdajs1983u112',
+    name: 'Espetinho Carne',
+    description: 'Espetinho delicioso',
+    imagePath: '1668473462705-coca-cola.png',
+    price: 7,
+    ingredients: [],
+  },
+  {
+    _id: '019819u3y9123112',
+    name: 'Espetinho Frango',
+    description: 'Espetinho delicioso',
+    imagePath: '1668473462705-coca-cola.png',
+    price: 7,
+    ingredients: [],
+  },
+  {
+    _id: '019123123s1983u112',
+    name: 'Espetinho de Kafta',
+    description: 'Espetinho delicioso',
+    imagePath: '1668473462705-coca-cola.png',
+    price: 7,
+    ingredients: [],
+  },
+  {
+    _id: '0112312312983u112',
+    name: 'Espetinho de Linguiça',
+    description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,
     ingredients: [],

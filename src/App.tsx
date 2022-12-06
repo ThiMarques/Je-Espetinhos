@@ -13,13 +13,14 @@ import {
 import { Header } from './components/Header';
 import { Categories } from './components/Categories';
 import { Menu } from './components/Menu';
+import Product from './components/Product';
+import { productList } from './mocks/product';
 // import { Product } from './types/Product';
 
 export function App() {
   // const [products, setProducts] = useState<Product[]>([]);
 
   return (
-    <>
       <Container>
         <Header />
 
@@ -28,13 +29,10 @@ export function App() {
         </CategoriesContainer>
 
         <MenuContainer>
-          <Menu
-            // products={products}
-          />
+          {productList.map((product) => {
+            return <Product key={product._id} product={product}/>;
+          })}
         </MenuContainer>
       </Container>
-
-
-    </>
   );
 }
