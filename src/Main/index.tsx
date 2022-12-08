@@ -8,7 +8,8 @@ import {
   CategoriesContainer,
   MenuContainer,
   Footer,
-  TabBarContainer
+  TabBarContainer,
+  CartItemContainer
 } from './styles';
 
 import { Header } from '../components/Header';
@@ -18,6 +19,7 @@ import Product from '../components/Product';
 import { productList } from '../mocks/product';
 import { GlobalStyles } from '../styles/GlobalStyles';
 import { TabBar } from '../components/TabBar';
+import { CartItem } from '../components/CartItem';
 
 // import { Product } from './types/Product';
 
@@ -40,6 +42,9 @@ export function Main() {
       </Container>
 
       <Footer>
+        <CartItemContainer>
+          <CartItem />
+        </CartItemContainer>
         <TabBarContainer>
           <TabBar />
         </TabBarContainer>
