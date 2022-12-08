@@ -8,7 +8,13 @@ import { SearchCategory } from '../SearchCategory';
 import { TabBar } from '../TabBar';
 import { Text } from '../Text';
 
-import { TabBarContainer, Container, SearchBarContainer, SearchCategoryContainer } from './styles';
+import {
+  TabBarContainer,
+  Container,
+  SearchBarContainer,
+  SearchCategoryContainer,
+  Footer
+} from './styles';
 
 export function Search() {
   return (
@@ -22,19 +28,20 @@ export function Search() {
         </SearchBarContainer>
 
         <SearchCategoryContainer>
+          <Text>Categorias</Text>
+
           {categoryList.map((category) => {
             return <SearchCategory key={category._id} category={category}/>;
           })}
         </SearchCategoryContainer>
+      </Container>
 
-
-
-
+      <Footer>
         <TabBarContainer>
           <TabBar />
         </TabBarContainer>
+      </Footer>
 
-      </Container>
     </>
   );
 }

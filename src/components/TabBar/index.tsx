@@ -13,7 +13,7 @@ export function TabBar() {
       <TabBarContainer>
         <IoHomeOutline />
         <Text>
-          <Link to='/'>Inicio</Link>
+          <Link to='/'>Início</Link>
         </Text>
       </TabBarContainer>
 

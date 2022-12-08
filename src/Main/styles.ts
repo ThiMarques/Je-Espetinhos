@@ -32,8 +32,6 @@ export const Footer = styled.div`
   padding: 16px 24px;
 `;
 
-export const FooterContainer = styled.footer``;
-
 export const TabBarContainer = styled.div`
   background-color: #fafafa;
   display: flex;
@@ -45,12 +43,4 @@ export const TabBarContainer = styled.div`
   justify-content: space-around;
   z-index: 1000;
   box-shadow: 0 1px 3px rgb(0 0 0 / 24%);
-`;
-
-export const CenteredContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  margin-top: 32px;
 `;

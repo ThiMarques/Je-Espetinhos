@@ -7,10 +7,7 @@ import {
   Container,
   CategoriesContainer,
   MenuContainer,
-  SearchBarContainer,
   Footer,
-  FooterContainer,
-  CenteredContainer,
   TabBarContainer
 } from './styles';
 
@@ -20,10 +17,8 @@ import { Menu } from '../components/Menu';
 import Product from '../components/Product';
 import { productList } from '../mocks/product';
 import { GlobalStyles } from '../styles/GlobalStyles';
-import { SearchBar } from '../components/SearchBar';
 import { TabBar } from '../components/TabBar';
-import { Search } from '../components/Search';
-import { Orders } from '../components/Orders';
+
 // import { Product } from './types/Product';
 
 export function Main() {

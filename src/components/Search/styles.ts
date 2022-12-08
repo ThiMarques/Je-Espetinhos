@@ -16,6 +16,10 @@ export const SearchCategoryContainer = styled.div`
   padding: 8px;
 `;
 
+export const Footer = styled.div`
+  min-height: 110px;
+`;
+
 export const TabBarContainer = styled.div`
   background-color: #fafafa;
   display: flex;
