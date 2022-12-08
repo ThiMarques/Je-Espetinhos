@@ -1,38 +1,23 @@
 import React, { useState } from 'react';
-// import { Oval } from 'react-loading-icons';
 
-import {
-  Container,
-  CategoriesContainer,
-  MenuContainer,
-  Footer,
-  FooterContainer,
-  CenteredContainer
-} from './AppStyles';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Categories } from './components/Categories';
-import { Menu } from './components/Menu';
-import Product from './components/Product';
-import { productList } from './mocks/product';
-// import { Product } from './types/Product';
+import { Orders } from './components/Orders';
+import { Search } from './components/Search';
+import { Main } from './Main';
 
 export function App() {
   // const [products, setProducts] = useState<Product[]>([]);
 
   return (
-      <Container>
-        <Header />
-
-        <CategoriesContainer>
-          <Categories />
-        </CategoriesContainer>
-
-        <MenuContainer>
-          {productList.map((product) => {
-            return <Product key={product._id} product={product}/>;
-          })}
-        </MenuContainer>
-      </Container>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Main />}/>
+          <Route path='search' element={<Search />}/>
+          <Route path='order' element={<Orders />}/>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }

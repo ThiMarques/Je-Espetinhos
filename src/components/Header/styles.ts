@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  /* background: red; */
   display: flex;
-  border-radius: 8px;
+  position: relative;
+  justify-content: center;
 `;
 
 export const HeaderText = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
   align-items: center;
   justify-content: center;
 `;

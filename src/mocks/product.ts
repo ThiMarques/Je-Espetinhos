@@ -39,4 +39,12 @@ export const productList = [
     price: 7,
     ingredients: [],
   },
+  {
+    _id: '789218721894',
+    name: 'Espetinho de Pao de Alho',
+    description: 'Espetinho delicioso',
+    imagePath: '1668473462705-coca-cola.png',
+    price: 7,
+    ingredients: [],
+  },
 ];

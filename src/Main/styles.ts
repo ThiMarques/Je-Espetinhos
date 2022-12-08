@@ -11,12 +11,19 @@ export const CategoriesContainer = styled.div`
   margin-top: 18px;
 `;
 
+export const SearchBarContainer = styled.div`
+  background-color: blue;
+  height: 40px;
+  padding-top: 2px;
+`;
+
 export const MenuContainer = styled.div`
   width: 100%;
   display: grid;
   column-gap: 8px;
   row-gap: 8px;
   grid-template-columns: 1fr 1fr;
+  padding: 8px;
 `;
 
 export const Footer = styled.div`
@@ -26,6 +33,19 @@ export const Footer = styled.div`
 `;
 
 export const FooterContainer = styled.footer``;
+
+export const TabBarContainer = styled.div`
+  background-color: #fafafa;
+  display: flex;
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  justify-content: space-around;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 24%);
+`;
 
 export const CenteredContainer = styled.div`
   display: flex;

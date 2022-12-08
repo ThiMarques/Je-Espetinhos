@@ -13,9 +13,7 @@ export function Header() {
         <Text size={24} weight="700" style={{ marginRight: 4 }}>
           JE ESPETINHOS
         </Text>
-        <Text>
-          Desde 2013
-        </Text>
+        <Text><small>Desde 2013</small></Text>
       </HeaderText>
     </Container>
   );

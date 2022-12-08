@@ -6,7 +6,9 @@ export const ProductContainer = styled.div`
     border-radius: 15px;
     border: 1px solid black;
     overflow: hidden;
-    
+    /* margin-left: 8px;
+    margin-right: 8px; */
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
