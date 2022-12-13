@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ProductContainer = styled.div`
-    position: relative;
     background-color: whitesmoke;
     border-radius: 15px;
     border: 1px solid black;
