@@ -5,7 +5,6 @@ import { Text } from '../Text';
 import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from 'react-icons/io';
 
 import { ProductModal } from '../ProductModal';
-// import { Modal } from '@mui/material';
 
 import {
   ProductContainer,

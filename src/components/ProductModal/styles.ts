@@ -5,7 +5,7 @@ export const Overlay = styled.div`
     height: 100%;
     left: 0px;
     top: 0px;
-    background: #E5E5E5;
+    background: #fafafa;
     backdrop-filter: blur(4.5px);
     position: fixed;
 `;

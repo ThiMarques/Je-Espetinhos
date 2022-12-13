@@ -5,7 +5,6 @@ export const SearchCategoryContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  position: relative;
   padding: 8px;
 
   .image {
