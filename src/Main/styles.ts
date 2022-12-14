@@ -35,7 +35,7 @@ export const Footer = styled.div`
 export const CartItemContainer = styled.div`
   background-color: #D73035;
   display: flex;
-  position: fixed;
+  /* position: fixed; */
   bottom: 50px;
   height: 50px;
   left: 0px;

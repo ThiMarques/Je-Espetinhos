@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoMdClose } from 'react-icons/io';
+import { productList } from '../../mocks/product';
 import Product from '../Product';
 import { Text } from '../Text';
 import { Image, Overlay, ProductContainer } from './styles';
@@ -7,9 +8,10 @@ import { Image, Overlay, ProductContainer } from './styles';
 interface SearchModalProps {
   visible: boolean;
   onClose: () => void;
+  categories: [];
 }
 
-export function SearchModal({ visible, onClose }: SearchModalProps) {
+export function SearchModal({ visible, onClose, categories }: SearchModalProps) {
   if (!visible) {
     return null;
   }
@@ -23,7 +25,9 @@ export function SearchModal({ visible, onClose }: SearchModalProps) {
       </Image>
 
       <ProductContainer>
-        <Product />
+        {productList.map((product) => {
+          return <Product key={product._id} product={product}/>;
+        })}
       </ProductContainer>
     </Overlay>
   );

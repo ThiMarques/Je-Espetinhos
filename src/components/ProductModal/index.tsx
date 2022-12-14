@@ -2,6 +2,9 @@ import React from 'react';
 
 import { IoIosAddCircleOutline, IoIosRemoveCircleOutline, IoMdClose } from 'react-icons/io';
 
+import { productList } from '../../mocks/product';
+import { formatCurrency } from '../../utils/formatCurrency';
+
 import { Text } from '../Text';
 
 import {
@@ -9,15 +12,20 @@ import {
   Image,
   InfoContainer,
   Title,
-  Ingredients
+  Ingredients,
+  Footer,
+  FooterContainer,
+  PriceContainer,
+  Button
 } from './styles';
 
 interface ProductModalProps {
   visible: boolean;
   onClose: () => void;
+  products: [];
 }
 
-export function ProductModal({ visible, onClose }: ProductModalProps) {
+export function ProductModal({ visible, onClose, products }: ProductModalProps) {
   if (!visible) {
     return null;
   }
@@ -32,8 +40,8 @@ export function ProductModal({ visible, onClose }: ProductModalProps) {
 
       <InfoContainer>
         <Title>
-          <Text weight='600' size={24}>Espetinho</Text>
-          <Text color='#666' style={{ marginTop: 8 }}>Espetinho de Carne tradicional</Text>
+          <Text weight='600' size={24}>{products.name}</Text>
+          <Text color='#666' style={{ marginTop: 8 }}>{products.description}</Text>
         </Title>
 
         <Ingredients>
@@ -44,7 +52,21 @@ export function ProductModal({ visible, onClose }: ProductModalProps) {
             </div>
           </div>
         </Ingredients>
+
+        <Footer>
+          <FooterContainer>
+            <PriceContainer>
+              <Text weight='400' size={16}>Preço</Text>
+              <Text weight='600' size={20}>{formatCurrency(products.price)}</Text>
+            </PriceContainer>
+
+            <Button>
+              Adicionar ao carrinho
+            </Button>
+          </FooterContainer>
+        </Footer>
       </InfoContainer>
+
     </Overlay>
   );
 }

@@ -41,4 +41,8 @@ export const ProductContainer = styled.div`
     margin-top: 235px;
     margin-left: 8px;
     margin-right: 8px;
+
+    display: flex;
+    flex-direction: column;
+
 `;

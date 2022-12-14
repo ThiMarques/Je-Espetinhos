@@ -65,6 +65,7 @@ export const Title = styled.div`
 export const Ingredients = styled.div`
     margin-top: 32px;
     flex: 1;
+    width: 100%;
 
     .itemsContainer {
         display: flex;
@@ -73,10 +74,39 @@ export const Ingredients = styled.div`
         padding: 16px;
         gap: 20px;
 
-        width: 345px;
+        width: 100%;
         height: 56px;
 
         border: 1px solid rgba(204, 204, 204, 0.3);
         border-radius: 8px;
     }
 `;
+
+export const Footer = styled.div`
+    min-height: 110px;
+    background-color: #fafafa;
+    padding: 16px 24px;
+    width: 100%;
+`;
+
+export const FooterContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const PriceContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+export const Button = styled.button`
+    background-color: #D73035;
+    border: none;
+    color: white;
+
+    padding: 8px;
+    border-radius: 8px;
+`;
+
