@@ -1,15 +1,36 @@
 import React from 'react';
 
-import { IoIosCart } from 'react-icons/io';
-
+// import { IoIosCart } from 'react-icons/io';
+import { CartItemInterface } from '../../types/CartItem';
 import { Text } from '../Text';
+// import { Text } from '../Text';
 
-export function CartItem() {
+import {
+  Item,
+  ProductContainer,
+  Actions,
+  Image,
+  QuantityContainer,
+} from './styles';
+
+interface CartItemProps {
+  cartItems: CartItemInterface;
+}
+
+export function CartItem({ cartItems }: CartItemProps) {
   return (
-    <>
-      <IoIosCart style={{ color: 'white' }}/>
-      <Text style={{ color: 'white' }}>Cart Item</Text>
-      <Text style={{ color: 'white' }}>R$ 23,00</Text>
-    </>
+    <Item>
+      <ProductContainer>
+        <Image />
+
+        <QuantityContainer>
+          <Text size={14} color='#666'>
+            Total
+          </Text>
+        </QuantityContainer>
+      </ProductContainer>
+
+      <Actions></Actions>
+    </Item>
   );
 }

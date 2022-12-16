@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 
-import { Text } from '../Text';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 
-import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from 'react-icons/io';
-
-import { ProductModal } from '../ProductModal';
-import { formatCurrency } from '../../utils/formatCurrency';
 import { productList } from '../../mocks/product';
 
-import {
-  ProductContainer,
-} from './styles';
-import { PProduct } from '../../types/Product';
+import { Text } from '../Text';
+import { ProductModal } from '../ProductModal';
+import { formatCurrency } from '../../utils/formatCurrency';
+import { ProductInterface } from '../../types/Product';
 
-// interface ProductProps {
-//   product: product[];
-// }
+import { ProductContainer, ProductContent } from './styles';
 
-function Product({ product }) {
+interface ProductProps {
+  product: ProductInterface;
+}
+
+function Product ({ product }: ProductProps) {
   const [count, setCount] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<null | ProductInterface>(null);
 
-  function handleOpenModal() {
+  function handleOpenModal(product: ProductInterface) {
     setIsModalVisible(true);
+    setSelectedProduct(product);
   }
 
   function handleCloseModal() {
@@ -31,14 +31,10 @@ function Product({ product }) {
 
   return (
     <>
-      {/* <ProductModal
-        visible={isModalVisible}
-        onClose={handleCloseModal}
-      /> */}
       {productList.map((products) => {
         return <ProductModal
           key={products._id}
-          products={products}
+          products={selectedProduct}
           visible={isModalVisible}
           onClose={handleCloseModal}
         />;
@@ -46,27 +42,22 @@ function Product({ product }) {
 
       <div>
         <ProductContainer >
-          <div className='image' onClick={() => handleOpenModal()}/>
-          <div className='text-content'>
-            <Text>{product.name}</Text>
-            <Text><small>{formatCurrency(product.price)}</small></Text>
+          <div className='image' onClick={() => handleOpenModal(product)}>
+            {/* {product.imagePath} */}
           </div>
 
-          <div className='add'>
-            <Text className='addTo'>Adicionar ao carrinho</Text>
-
-            <div className='funcAdd'>
-              <button onClick={() => setCount(count - 1)}>
-                <IoIosRemoveCircleOutline />
-              </button>
-
-              <Text>{count}</Text>
-
-              <button onClick={() => setCount(count + 1)}>
-                <IoIosAddCircleOutline />
-              </button>
+          <ProductContent>
+            <div className='text-content'>
+              <Text weight='600'>{product.name}</Text>
+              <Text color='#666' size={14}>{product.description}</Text>
+              <Text size={14} weight='600'>{formatCurrency(product.price)}</Text>
             </div>
-          </div>
+
+            <button className='add' onClick={() => setCount(count + 1)}>
+              <IoIosAddCircleOutline />
+            </button>
+          </ProductContent>
+
         </ProductContainer>
       </div>
     </>

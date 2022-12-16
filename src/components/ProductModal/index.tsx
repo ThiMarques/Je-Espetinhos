@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { IoIosAddCircleOutline, IoIosRemoveCircleOutline, IoMdClose } from 'react-icons/io';
+import { IoMdClose } from 'react-icons/io';
 
-import { productList } from '../../mocks/product';
+// import { productList } from '../../mocks/product';
+import { ProductInterface } from '../../types/Product';
 import { formatCurrency } from '../../utils/formatCurrency';
 
 import { Text } from '../Text';
@@ -22,10 +23,14 @@ import {
 interface ProductModalProps {
   visible: boolean;
   onClose: () => void;
-  products: [];
+  products: null | ProductInterface;
 }
 
 export function ProductModal({ visible, onClose, products }: ProductModalProps) {
+  if (!products) {
+    return null;
+  }
+
   if (!visible) {
     return null;
   }
@@ -44,23 +49,25 @@ export function ProductModal({ visible, onClose, products }: ProductModalProps) 
           <Text color='#666' style={{ marginTop: 8 }}>{products.description}</Text>
         </Title>
 
-        <Ingredients>
-          <Text style={{ marginBottom: 16 }}>Ingredientes</Text>
-          <div className='itemsContainer'>
-            <div className='items'>
-              <Text>Carne</Text>
+        {products.ingredients.length > 0 && (
+          <Ingredients>
+            <Text weight='600' color='#666' style={{ marginBottom: 16 }}>Ingredientes</Text>
+            <div className='itemsContainer'>
+              <div className='items'>
+                <Text>{products.ingredients.name}</Text>
+              </div>
             </div>
-          </div>
-        </Ingredients>
+          </Ingredients>
+        )}
 
         <Footer>
           <FooterContainer>
             <PriceContainer>
-              <Text weight='400' size={16}>Preço</Text>
-              <Text weight='600' size={20}>{formatCurrency(products.price)}</Text>
+              <Text weight='400' color='#666'>Preço</Text>
+              <Text weight="600" size={20}>{formatCurrency(products.price)}</Text>
             </PriceContainer>
 
-            <Button>
+            <Button onClick={() => alert('Adicionou ao pedido!')}>
               Adicionar ao carrinho
             </Button>
           </FooterContainer>

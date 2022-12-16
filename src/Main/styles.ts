@@ -32,18 +32,16 @@ export const Footer = styled.div`
   padding: 16px 24px;
 `;
 
-export const CartItemContainer = styled.div`
-  background-color: #D73035;
-  display: flex;
-  /* position: fixed; */
-  bottom: 50px;
-  height: 50px;
-  left: 0px;
-  right: 0px;
-  justify-content: space-around;
-  z-index: 1000;
+export const FooterContainer = styled.footer``;
 
-  align-items: center;
+export const CartItemContainer = styled.div`
+  /* background-color: #D73035; */
+  padding: 0 8px;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  margin-bottom: 50px;
+  width: 100%;
 `;
 
 export const TabBarContainer = styled.div`

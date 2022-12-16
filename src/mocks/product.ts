@@ -4,13 +4,18 @@ export const productList = [
     name: 'Coca cola',
     description: 'Coca cola lata geladinha topzera',
     imagePath: '1668473462705-coca-cola.png',
-    price: 7,
-    ingredients: [],
+    price: 8,
+    ingredients: [
+      {
+        _id: '121852',
+        name: 'pao de alho'
+      }
+    ],
   },
   {
     _id: '019873812bdajs1983u112',
     name: 'Espetinho Carne',
-    description: 'Espetinho delicioso',
+    description: 'Espetinho delicioso de carne',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,
     ingredients: [],
@@ -44,7 +49,27 @@ export const productList = [
     name: 'Espetinho de Pao de Alho',
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
-    price: 7,
-    ingredients: [],
+    price: 10,
+    ingredients: [
+      {
+        name: 'pao e alho',
+      }
+    ],
   },
+  // {
+  //   _id: '0112312312983u112',
+  //   name: 'Espetinho de Linguiça',
+  //   description: 'Espetinho delicioso',
+  //   imagePath: '1668473462705-coca-cola.png',
+  //   price: 7,
+  //   ingredients: [],
+  // },
+  // {
+  //   _id: '0112312312983u112',
+  //   name: 'Espetinho de Linguiça',
+  //   description: 'Espetinho delicioso',
+  //   imagePath: '1668473462705-coca-cola.png',
+  //   price: 7,
+  //   ingredients: [],
+  // },
 ];

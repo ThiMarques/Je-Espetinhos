@@ -15,38 +15,30 @@ export const ProductContainer = styled.div`
         height: 120px;
         background-color: black;
     };
+`;
+
+export const ProductContent = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 
     .text-content {
         padding: 8px;
         display: flex;
         flex-direction: column;
         gap: 5px;
+
     };
 
     .add {
+        background-color: whitesmoke;
+        border: none;
+        margin-right: 10px;
+        margin-top: 40px;
+
         display: flex;
-        flex-direction: column;
-        padding: 8px;
-        width: 100%;
-
-        .addTo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        };
-
-        .funcAdd {
-            display: flex;
-
-            align-items: center;
-            justify-content: space-around;
-        };
-
-        button {
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 100%;
-        };
+        align-items: center;
+        justify-content: center;
     };
 `;
