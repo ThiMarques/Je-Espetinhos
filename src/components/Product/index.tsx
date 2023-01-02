@@ -13,10 +13,11 @@ import { ProductContainer, ProductContent } from './styles';
 
 interface ProductProps {
   product: ProductInterface;
+  onAddToCart: (product: ProductInterface) => void;
 }
 
-function Product ({ product }: ProductProps) {
-  const [count, setCount] = useState(0);
+function Product ({ product , onAddToCart}: ProductProps) {
+  // console.log(product);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<null | ProductInterface>(null);
 
@@ -37,6 +38,7 @@ function Product ({ product }: ProductProps) {
           products={selectedProduct}
           visible={isModalVisible}
           onClose={handleCloseModal}
+          onAddToCart={onAddToCart}
         />;
       })}
 
@@ -53,7 +55,7 @@ function Product ({ product }: ProductProps) {
               <Text size={14} weight='600'>{formatCurrency(product.price)}</Text>
             </div>
 
-            <button className='add' onClick={() => setCount(count + 1)}>
+            <button className='add' onClick={() => onAddToCart(product)}>
               <IoIosAddCircleOutline />
             </button>
           </ProductContent>

@@ -24,7 +24,7 @@ export function Details() {
       />
 
       <DetailsContainer>
-        <button type='button' onClick={handleOpenModal}>
+        <button className='button' onClick={handleOpenModal}>
           Detalhes do pedido
         </button>
       </DetailsContainer>

@@ -22,16 +22,14 @@ import {
   CartItemContainer,
   FooterContainer
 } from './styles';
+import { ProductInterface } from '../types/Product';
 
 export function Main() {
   const [selectedProduct, setSelectedProduct] = useState('');
-  const [cartItems, setCartItems] = useState<CartItemInterface[]>([
-    {
-      quantity: 1,
-      product: productList[0],
-    },
-  ]);
 
+  function addToCart(product: ProductInterface) {
+    alert(product.name);
+  }
 
   return (
     <>
@@ -49,6 +47,7 @@ export function Main() {
             return <Product
               key={product._id}
               product={product}
+              onAddToCart={addToCart}
             />;
           })}
         </MenuContainer>
@@ -59,12 +58,7 @@ export function Main() {
         <FooterContainer>
 
           <CartItemContainer>
-            {cartItems.map((cartItem) => {
-              return <CartItem
-                key={cartItem.product.id}
-                cartItems={cartItems}
-              />;
-            })}
+            <CartItem />
           </CartItemContainer>
 
           <TabBarContainer>

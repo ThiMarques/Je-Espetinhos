@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const SearchContainer = styled.div`
-  background-color: red;
   margin: 8px;
   display: flex;
   flex-grow: 1;
@@ -16,5 +15,6 @@ export const SearchContainer = styled.div`
     border: none;
     font-size: 1rem;
     background-color: #dcdcdc;
+    border-radius: 8px;
   }
 `;

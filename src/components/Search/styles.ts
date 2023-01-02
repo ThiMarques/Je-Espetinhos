@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: '0';
+  margin-top: 0px;
   flex: 1;
   background: #fafafa;
 `;
 
 export const SearchBarContainer = styled.div`
-  /* position: fixed; */
   width: 100%;
-  padding: 20px 20px 5px;
+  padding: 20px 8px 5px;
 `;
 
 export const SearchCategoryContainer = styled.div`
@@ -21,7 +20,6 @@ export const Footer = styled.div`
 `;
 
 export const TabBarContainer = styled.div`
-  background-color: #fafafa;
   display: flex;
   position: fixed;
   height: 50px;

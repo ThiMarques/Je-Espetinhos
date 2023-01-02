@@ -36,12 +36,13 @@ export const FooterContainer = styled.footer``;
 
 export const CartItemContainer = styled.div`
   /* background-color: #D73035; */
+  border-radius: 8px;
   padding: 0 8px;
   display: flex;
-  position: fixed;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   width: 100%;
+
 `;
 
 export const TabBarContainer = styled.div`

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { categoryList } from '../../mocks/category';
+import { Category } from '../../types/Category';
 import { SearchModal } from '../SearchModal';
 import { Text } from '../Text';
 import { SearchCategoryContainer } from './styles';
 
-export function SearchCategory({ category }) {
+interface SearchCategoryProps {
+  category: Category;
+}
+
+export function SearchCategory({ category }: SearchCategoryProps) {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   function handleOpenModal() {
@@ -17,11 +22,6 @@ export function SearchCategory({ category }) {
 
   return (
     <>
-      {/* <SearchModal
-        visible={isModalVisible}
-        onClose={handleCloseModal}
-      /> */}
-
       {categoryList.map((categories) => {
         return <SearchModal
           key={categories._id}

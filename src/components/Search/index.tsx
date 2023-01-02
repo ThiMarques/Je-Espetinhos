@@ -28,7 +28,7 @@ export function Search() {
         </SearchBarContainer>
 
         <SearchCategoryContainer>
-          <Text>Categorias</Text>
+          <Text weight='600' style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}>Categorias</Text>
 
           {categoryList.map((category) => {
             return <SearchCategory key={category._id} category={category}/>;

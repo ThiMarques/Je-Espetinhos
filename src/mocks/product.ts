@@ -14,7 +14,7 @@ export const productList = [
   },
   {
     _id: '019873812bdajs1983u112',
-    name: 'Espetinho Carne',
+    name: 'Espetinho Carne muito bom',
     description: 'Espetinho delicioso de carne',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,

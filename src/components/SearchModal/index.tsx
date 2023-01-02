@@ -1,14 +1,15 @@
 import React from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { productList } from '../../mocks/product';
+import { Category } from '../../types/Category';
 import Product from '../Product';
 import { Text } from '../Text';
-import { Image, Overlay, ProductContainer } from './styles';
+import { Image, Overlay, ProductContainer, } from './styles';
 
 interface SearchModalProps {
   visible: boolean;
   onClose: () => void;
-  categories: [];
+  categories: Category;
 }
 
 export function SearchModal({ visible, onClose, categories }: SearchModalProps) {
@@ -22,6 +23,7 @@ export function SearchModal({ visible, onClose, categories }: SearchModalProps) 
         <button className='close' onClick={onClose}>
           <IoMdClose style={{ color: '#fff' }}/>
         </button>
+        <Text weight='700'>{categories.name}</Text>
       </Image>
 
       <ProductContainer>
