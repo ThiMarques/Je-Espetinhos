@@ -20,6 +20,45 @@ export const InformationContent = styled.div`
   }
 `;
 
+export const AddressContainer = styled.div`
+  /* display: flex; */
+  padding: 8px;
+
+  .options {}
+`;
+
+export const Address = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 12px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 8px;
+
+  .addressInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .button {
+    border: none;
+    padding: 8px;
+    background-color: transparent;
+  }
+`;
+
+export const Time = styled.div`
+  margin-top: 12px;
+  padding: 8px;
+  border: 1px solid red;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Title = styled.div`
   background-color: rgb(235, 235, 235);
   display: flex;

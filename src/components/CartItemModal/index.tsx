@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoIosAddCircleOutline, IoIosRemoveCircleOutline, IoIosArrowRoundBack } from 'react-icons/io';
+import { IoIosAddCircleOutline, IoIosRemoveCircleOutline, IoIosArrowRoundBack, IoIosArrowForward } from 'react-icons/io';
 
 import { CartItemInterface } from '../../types/CartItem';
 import { formatCurrency } from '../../utils/formatCurrency';
@@ -10,6 +10,8 @@ import {
   Overlay,
   InformationContent,
   Items,
+  AddressContainer,
+  Time,
   TotalContainer,
   ConfirmOrder,
   ItemsContent,
@@ -18,7 +20,8 @@ import {
   ItemsContainer,
   ItemsImage,
   Summary,
-  Title
+  Title,
+  Address
 } from './styles';
 
 interface CartItemModalProps {
@@ -48,6 +51,31 @@ export function CartItemModal({ cartItem, visible, onClose }: CartItemModalProps
               Informações sobre o pedido
             </Text>
           </div>
+
+          <AddressContainer>
+            <div className='options'>
+              <Text size={18} style={{ marginRight: 8 }}>Entrega</Text>
+              <Text size={18}>Retirada</Text>
+            </div>
+
+            <Address>
+              <div className='addressInfo'>
+                <Text style={{ marginBottom: 2 }} size={14} color="#666">Entregar em</Text>
+                <Text style={{ marginBottom: 2 }}>R: Gregoria de Fregel, 380</Text>
+                <Text size={14} color="#666">Parque Espacial - Bl 38 Ap 02</Text>
+              </div>
+
+              <button className='button' onClick={() => alert('button')}>
+                <IoIosArrowForward color='#D73035'/>
+              </button>
+            </Address>
+
+            <Time>
+              <Text size={14} color='#D73035'>50 min</Text>
+              <Text size={12} color='#666'>Frete: R$ 12,00</Text>
+            </Time>
+
+          </AddressContainer>
 
           <Title>
             <div className='icon' onClick={onClose}>

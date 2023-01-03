@@ -23,10 +23,10 @@ export function CartItem() {
       quantity: 4,
       product: productList[2],
     },
-    {
-      quantity: 5,
-      product: productList[3],
-    },
+    // {
+    //   quantity: 5,
+    //   product: productList[3],
+    // },
   ]);
 
   console.log(cartItems);
