@@ -21,7 +21,6 @@ export const MenuContainer = styled.div`
   width: 100%;
   display: grid;
   column-gap: 8px;
-  row-gap: 8px;
   grid-template-columns: 1fr 1fr;
   padding: 8px;
 `;

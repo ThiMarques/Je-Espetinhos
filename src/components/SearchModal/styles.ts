@@ -47,5 +47,6 @@ export const ProductContainer = styled.div`
   margin-top: 130px;
   margin-left: 8px;
   margin-right: 8px;
+  margin-bottom: 70px;
 `;
 

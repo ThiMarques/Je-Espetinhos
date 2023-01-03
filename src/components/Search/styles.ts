@@ -20,6 +20,7 @@ export const Footer = styled.div`
 `;
 
 export const TabBarContainer = styled.div`
+background-color: #fafafa;
   display: flex;
   position: fixed;
   height: 50px;

@@ -43,7 +43,7 @@ function Product ({ product , onAddToCart}: ProductProps) {
       })}
 
       <div>
-        <ProductContainer >
+        <ProductContainer style={{ marginBottom: 10 }}>
           <div className='image' onClick={() => handleOpenModal(product)}>
             {/* {product.imagePath} */}
           </div>

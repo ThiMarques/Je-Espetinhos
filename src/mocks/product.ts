@@ -56,20 +56,20 @@ export const productList = [
       }
     ],
   },
-  // {
-  //   _id: '0112312312983u112',
-  //   name: 'Espetinho de Linguiça',
-  //   description: 'Espetinho delicioso',
-  //   imagePath: '1668473462705-coca-cola.png',
-  //   price: 7,
-  //   ingredients: [],
-  // },
-  // {
-  //   _id: '0112312312983u112',
-  //   name: 'Espetinho de Linguiça',
-  //   description: 'Espetinho delicioso',
-  //   imagePath: '1668473462705-coca-cola.png',
-  //   price: 7,
-  //   ingredients: [],
-  // },
+  {
+    _id: '0112312312983u112',
+    name: 'Espetinho de Linguiça',
+    description: 'Espetinho delicioso',
+    imagePath: '1668473462705-coca-cola.png',
+    price: 7,
+    ingredients: [],
+  },
+  {
+    _id: '0112312312983u112',
+    name: 'Espetinho de Linguiça',
+    description: 'Espetinho delicioso',
+    imagePath: '1668473462705-coca-cola.png',
+    price: 7,
+    ingredients: [],
+  },
 ];
