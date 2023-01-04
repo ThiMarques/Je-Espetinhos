@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IoIosAddCircleOutline, IoIosRemoveCircleOutline, IoIosArrowRoundBack, IoIosArrowForward } from 'react-icons/io';
 
 import { CartItemInterface } from '../../types/CartItem';
@@ -9,6 +9,7 @@ import { Text } from '../Text';
 import {
   Overlay,
   InformationContent,
+  TitleContainer,
   Items,
   AddressContainer,
   Time,
@@ -25,20 +26,13 @@ import {
 } from './styles';
 
 interface CartItemModalProps {
-  cartItem: CartItemInterface;
+  cartItems: CartItemInterface[];
   visible: boolean;
   onClose: () => void;
 }
 
-export function CartItemModal({ cartItem, visible, onClose }: CartItemModalProps) {
-  // console.log(cartItem);
-  if (!cartItem) {
-    return null;
-  }
-
-  if (!visible) {
-    return null;
-  }
+export function CartItemModal({ cartItems, visible, onClose }: CartItemModalProps) {
+  const [count, setCount] = useState(1);
 
   return (
     <>
@@ -46,11 +40,20 @@ export function CartItemModal({ cartItem, visible, onClose }: CartItemModalProps
         <Header />
 
         <InformationContent>
-          <div className='title'>
-            <Text weight='600' size={24}>
+
+          <TitleContainer>
+            <div className='icon' onClick={onClose}>
+              <IoIosArrowRoundBack />
+            </div>
+            <div className='title'>
+              <Text weight='600' size={24}>
               Informações sobre o pedido
-            </Text>
-          </div>
+              </Text>
+            </div>
+            <button className='clear' onClick={() => alert('Limpar o pedido')}>
+              <Text size={14} color='#D73035'>Limpar</Text>
+            </button>
+          </TitleContainer>
 
           <AddressContainer>
             <div className='options'>
@@ -78,45 +81,45 @@ export function CartItemModal({ cartItem, visible, onClose }: CartItemModalProps
           </AddressContainer>
 
           <Title>
-            <div className='icon' onClick={onClose}>
-              <IoIosArrowRoundBack />
-            </div>
-
             <Text size={20}>
               Itens selecionados:
             </Text>
           </Title>
 
-          <Items>
-            <ItemsContainer>
-              <ItemsImage>
-                {/* {cartItem.product.image} */}
-              </ItemsImage>
+          {cartItems.map((cartItem) => (
+            <Items
+              key={cartItem.product.id}
+            >
+              <ItemsContainer>
+                <ItemsImage>
+                  {/* {cartItem.product.image} */}
+                </ItemsImage>
 
-              <ItemsQuantity>
-                <Text color='#666'>{cartItem.quantity}x</Text>
-              </ItemsQuantity>
+                <ItemsQuantity>
+                  <Text color='#666'>{cartItem.quantity} x</Text>
+                </ItemsQuantity>
 
-              <ItemsContent>
-                <div className='itemsDetails'>
-                  <Text weight='600' size={18} style={{ marginBottom: 4 }}>{cartItem.product.name}</Text>
-                </div>
-                <div className='itemsPrice'>
-                  <Text weight="400" size={14} color="#666">{formatCurrency(cartItem.product.price)}</Text>
-                </div>
-              </ItemsContent>
-            </ItemsContainer>
+                <ItemsContent>
+                  <div className='itemsDetails'>
+                    <Text weight='600' size={18} style={{ marginBottom: 4 }}>{cartItem.product.name}</Text>
+                  </div>
+                  <div className='itemsPrice'>
+                    <Text weight="400" size={14} color="#666">{formatCurrency(cartItem.product.price)}</Text>
+                  </div>
+                </ItemsContent>
+              </ItemsContainer>
 
-            <Actions>
-              <button className='funcButton' style={{ marginRight: 24 }}>
-                <IoIosAddCircleOutline />
-              </button>
+              <Actions>
+                <button className='funcButton' style={{ marginRight: 24 }} onClick={() => setCount(count + 1)}>
+                  <IoIosAddCircleOutline />
+                </button>
 
-              <button className='funcButton'>
-                <IoIosRemoveCircleOutline />
-              </button>
-            </Actions>
-          </Items>
+                <button className='funcButton' onClick={() => setCount(count - 1)}>
+                  <IoIosRemoveCircleOutline />
+                </button>
+              </Actions>
+            </Items>
+          ))}
 
           <Summary>
             <TotalContainer>

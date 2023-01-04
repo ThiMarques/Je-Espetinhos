@@ -10,14 +10,29 @@ export const Overlay = styled.div`
   position: fixed;
 `;
 
-export const InformationContent = styled.div`
+export const InformationContent = styled.div``;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .icon {
+    color: black;
+  };
+
   .title {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 8px;
     margin-bottom: 10px;
-  }
+  };
+
+  .clear {
+    border: none;
+    background-color: transparent;
+  };
 `;
 
 export const AddressContainer = styled.div`
@@ -64,13 +79,6 @@ export const Title = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
-  .icon {
-    background-color: rgb(63 63 70);
-    border-radius: 100%;
-    color: whitesmoke;
-    display: flex;
-  }
 `;
 
 export const Items = styled.div`

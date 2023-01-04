@@ -1,18 +1,33 @@
 import styled from 'styled-components';
 
-export const Item = styled.div`
-  background-color: #D73035;
-  border-radius: 8px;
-  width: 100%;
-  height: 100%;
-  padding: 8px 0;
-`;
+export const Item = styled.div``;
 
 export const ProductContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  .on {
+    color: whitesmoke;
+    background-color: #D73035;
+    border-radius: 8px;
+    width: 100%;
+    padding: 8px 0;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .off {
+    background-color: #ddd;
+    border-radius: 8px;
+    width: 100%;
+    padding: 8px 0;
+
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Actions = styled.div``;
