@@ -2,10 +2,8 @@ import React from 'react';
 
 import { IoMdClose } from 'react-icons/io';
 
-// import { productList } from '../../mocks/product';
 import { ProductInterface } from '../../types/Product';
 import { formatCurrency } from '../../utils/formatCurrency';
-
 import { Text } from '../Text';
 
 import {
@@ -39,8 +37,6 @@ export function ProductModal({ visible, onClose, products, onAddToCart }: Produc
   function handleAddToCart() {
     onAddToCart(products!);
     onClose();
-
-
   }
 
   return (

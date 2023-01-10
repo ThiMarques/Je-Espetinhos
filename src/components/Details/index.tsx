@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ProductContext } from '../../contexts/productContext';
 
 import { DetailsModal } from '../DetailsModal';
 import { Text } from '../Text';
@@ -6,6 +7,8 @@ import { Text } from '../Text';
 import { DetailsContainer } from './styles';
 
 export function Details() {
+  const { cartItems } = useContext(ProductContext);
+
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   function handleOpenModal() {
@@ -21,6 +24,7 @@ export function Details() {
       <DetailsModal
         visible={isModalVisible}
         onClose={handleCloseModal}
+        cartItems={cartItems}
       />
 
       <DetailsContainer>

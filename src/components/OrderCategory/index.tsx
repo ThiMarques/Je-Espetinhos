@@ -25,7 +25,7 @@ export function OrderCategory({order}) {
         <Text>R$ 23,00</Text>
 
         <DetailsContainer>
-          <Details />
+          <Details/>
         </DetailsContainer>
 
       </OrderCategoryContainer>

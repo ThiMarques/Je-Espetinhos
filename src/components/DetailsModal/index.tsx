@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoMdClose } from 'react-icons/io';
+import { CartItemInterface } from '../../types/CartItem';
 import { Text } from '../Text';
 
 import {
@@ -14,9 +15,10 @@ import {
 interface DetailsModalProps {
     visible: boolean;
     onClose: () => void;
+    cartItems: CartItemInterface[];
 }
 
-export function DetailsModal({ visible, onClose }: DetailsModalProps) {
+export function DetailsModal({ visible, onClose, cartItems }: DetailsModalProps) {
   if (!visible) {
     return null;
   }
@@ -40,18 +42,25 @@ export function DetailsModal({ visible, onClose }: DetailsModalProps) {
           <Text>R: Manoel Manoel, n22</Text>
         </Address>
 
-        <Request>
-          <Text style={{ backgroundColor: '#ebebeb', marginBottom: 8 }}>Pedido</Text>
+        <div className='order'>
+          <Text style={{ backgroundColor: '#ebebeb', marginBottom: 8, display: 'flex' }}>Pedido</Text>
+        </div>
 
-          <Text style={{ marginBottom: 2 }}>1x Espetinho</Text>
-          <Text style={{ marginBottom: 8 }}>R$ 6,00</Text>
+        {cartItems.map((cartItem) =>
+          <Request
+            key={cartItem.product.id}
+          >
+            <Text>{cartItem.quantity} x</Text>
+            <Text style={{ marginBottom: 2 }}>{cartItem.product.name}</Text>
+            <Text style={{ marginBottom: 8 }}>{cartItem.product.price}</Text>
 
-          <Text style={{ marginBottom: 2 }}>Molhos</Text>
-          <Text style={{ marginBottom: 8 }}><small>Molho barbecue</small></Text>
+            <Text style={{ marginBottom: 2 }}>Molhos</Text>
+            <Text style={{ marginBottom: 8 }}><small>Molho barbecue</small></Text>
 
-          <Text style={{ marginBottom: 2 }}>Bebida</Text>
-          <Text><small>Sem bebida</small></Text>
-        </Request>
+            <Text style={{ marginBottom: 2 }}>Bebida</Text>
+            <Text><small>Sem bebida</small></Text>
+          </Request>
+        )}
 
         <Payment>
           <Text style={{ backgroundColor: '#ebebeb', marginBottom: 8 }}>Forma de pagamento</Text>

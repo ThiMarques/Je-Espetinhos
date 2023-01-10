@@ -40,6 +40,11 @@ export const AddressContainer = styled.div`
   padding: 8px;
 
   .options {}
+
+  .button {
+    border: none;
+    background-color: transparent;
+  }
 `;
 
 export const Address = styled.div`
@@ -160,3 +165,5 @@ export const ConfirmOrder = styled.div`
     width: 100%;
   }
 `;
+
+export const InformationsContainer = styled.div``;

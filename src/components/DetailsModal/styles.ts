@@ -37,6 +37,10 @@ export const DetailsContainer = styled.div`
         align-items: center;
         justify-content: center;
     }
+
+    .order {
+      padding: 8px;
+    }
 `;
 
 export const Address = styled.div`

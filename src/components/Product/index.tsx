@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
@@ -13,13 +13,12 @@ import { ProductContainer, ProductContent } from './styles';
 
 interface ProductProps {
   product: ProductInterface;
-  onAddToCart: (product: ProductInterface) => void;
 }
 
-function Product ({ product , onAddToCart}: ProductProps) {
-  // console.log(product);
+function Product ({ product }: ProductProps) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<null | ProductInterface>(null);
+
 
   function handleOpenModal(product: ProductInterface) {
     setIsModalVisible(true);
@@ -28,6 +27,10 @@ function Product ({ product , onAddToCart}: ProductProps) {
 
   function handleCloseModal() {
     setIsModalVisible(false);
+  }
+
+  function onAddToCart(product: ProductInterface) {
+    alert(product.name);
   }
 
   return (
@@ -51,11 +54,14 @@ function Product ({ product , onAddToCart}: ProductProps) {
           <ProductContent>
             <div className='text-content'>
               <Text weight='600'>{product.name}</Text>
+
+              {/* <Text>{setCartItems}</Text> */}
+
               <Text color='#666' size={14}>{product.description}</Text>
               <Text size={14} weight='600'>{formatCurrency(product.price)}</Text>
             </div>
 
-            <button className='add' onClick={() => onAddToCart(product)}>
+            <button className='add' onClick={() => alert('Cliquei')}>
               <IoIosAddCircleOutline />
             </button>
           </ProductContent>

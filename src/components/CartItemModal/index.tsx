@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { IoIosAddCircleOutline, IoIosRemoveCircleOutline, IoIosArrowRoundBack, IoIosArrowForward } from 'react-icons/io';
+// import { CartItemContext } from '../../Main';
 
 import { CartItemInterface } from '../../types/CartItem';
 import { formatCurrency } from '../../utils/formatCurrency';
@@ -22,16 +23,16 @@ import {
   ItemsImage,
   Summary,
   Title,
-  Address
+  Address,
+  InformationsContainer
 } from './styles';
 
 interface CartItemModalProps {
   cartItems: CartItemInterface[];
-  visible: boolean;
   onClose: () => void;
 }
 
-export function CartItemModal({ cartItems, visible, onClose }: CartItemModalProps) {
+export function CartItemModal({ cartItems, onClose }: CartItemModalProps) {
   const [count, setCount] = useState(1);
 
   return (
@@ -57,8 +58,15 @@ export function CartItemModal({ cartItems, visible, onClose }: CartItemModalProp
 
           <AddressContainer>
             <div className='options'>
-              <Text size={18} style={{ marginRight: 8 }}>Entrega</Text>
-              <Text size={18}>Retirada</Text>
+
+              <button className='button'>
+                <Text size={18} style={{ marginRight: 8, color: '#D73035' }}>Entrega</Text>
+              </button>
+
+              <button className='button'>
+                <Text size={18}>Retirada</Text>
+
+              </button>
             </div>
 
             <Address>
@@ -87,44 +95,48 @@ export function CartItemModal({ cartItems, visible, onClose }: CartItemModalProp
           </Title>
 
           {cartItems.map((cartItem) => (
-            <Items
+            <InformationsContainer
               key={cartItem.product.id}
             >
-              <ItemsContainer>
-                <ItemsImage>
-                  {/* {cartItem.product.image} */}
-                </ItemsImage>
+              <Items>
+                <ItemsContainer>
+                  <ItemsImage>
+                    {/* {cartItem.product.image} */}
+                  </ItemsImage>
 
-                <ItemsQuantity>
-                  <Text color='#666'>{cartItem.quantity} x</Text>
-                </ItemsQuantity>
+                  <ItemsQuantity>
+                    <Text color='#666'>{cartItem.quantity} x</Text>
+                  </ItemsQuantity>
 
-                <ItemsContent>
-                  <div className='itemsDetails'>
-                    <Text weight='600' size={18} style={{ marginBottom: 4 }}>{cartItem.product.name}</Text>
-                  </div>
-                  <div className='itemsPrice'>
-                    <Text weight="400" size={14} color="#666">{formatCurrency(cartItem.product.price)}</Text>
-                  </div>
-                </ItemsContent>
-              </ItemsContainer>
+                  <ItemsContent>
+                    <div className='itemsDetails'>
+                      <Text weight='600' size={18} style={{ marginBottom: 4 }}>{cartItem.product.name}</Text>
+                    </div>
+                    <div className='itemsPrice'>
+                      <Text weight="400" size={14} color="#666">{formatCurrency(cartItem.product.price)}</Text>
+                    </div>
+                  </ItemsContent>
+                </ItemsContainer>
 
-              <Actions>
-                <button className='funcButton' style={{ marginRight: 24 }} onClick={() => setCount(count + 1)}>
-                  <IoIosAddCircleOutline />
-                </button>
+                <Actions>
+                  <button className='funcButton' style={{ marginRight: 24 }} onClick={() => setCount(count + 1)}>
+                    <IoIosAddCircleOutline />
+                  </button>
 
-                <button className='funcButton' onClick={() => setCount(count - 1)}>
-                  <IoIosRemoveCircleOutline />
-                </button>
-              </Actions>
-            </Items>
+                  <button className='funcButton' onClick={() => setCount(count - 1)}>
+                    <IoIosRemoveCircleOutline />
+                  </button>
+                </Actions>
+
+              </Items>
+
+            </InformationsContainer>
           ))}
 
           <Summary>
             <TotalContainer>
               <Text color='#666'>Total</Text>
-              <Text size={20} weight="600">{formatCurrency(200)}</Text>
+              <Text size={20} weight="600">{formatCurrency(120)} { /* (cartItem.product.price * cartItem.quantity) */}</Text>
             </TotalContainer>
 
             <ConfirmOrder>

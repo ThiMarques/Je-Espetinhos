@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
-
-// import { Oval } from 'react-loading-icons';
+import React, { createContext, useState } from 'react';
 
 import { productList } from '../mocks/product';
 
 import { Header } from '../components/Header';
 import { Categories } from '../components/Categories';
-import { GlobalStyles } from '../styles/GlobalStyles';
 import { TabBar } from '../components/TabBar';
 import Product from '../components/Product';
 import { CartItem } from '../components/CartItem';
-import { CartItemInterface } from '../types/CartItem';
-// import { Text } from '../components/Text';
+import { ProductInterface } from '../types/Product';
 
+import { GlobalStyles } from '../styles/GlobalStyles';
 import {
   Container,
   CategoriesContainer,
@@ -22,21 +19,19 @@ import {
   CartItemContainer,
   FooterContainer
 } from './styles';
-import { ProductInterface } from '../types/Product';
+
+// const ProductsCartContext = createContext('light');
 
 export function Main() {
-  const [selectedProduct, setSelectedProduct] = useState('');
-
-  function addToCart(product: ProductInterface) {
-    alert(product.name);
-  }
 
   return (
     <>
       <GlobalStyles />
       <Container>
 
+        {/* <ProductsCartContext.Provider value='dark'> */}
         <Header />
+        {/* </ProductsCartContext.Provider> */}
 
         <CategoriesContainer>
           <Categories />
@@ -47,7 +42,6 @@ export function Main() {
             return <Product
               key={product._id}
               product={product}
-              onAddToCart={addToCart}
             />;
           })}
         </MenuContainer>
@@ -58,7 +52,9 @@ export function Main() {
         <FooterContainer>
 
           <CartItemContainer>
-            <CartItem />
+            <CartItem
+              // product={product}
+            />
           </CartItemContainer>
 
           <TabBarContainer>

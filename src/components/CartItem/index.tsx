@@ -1,34 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
-import { productList } from '../../mocks/product';
-import { CartItemInterface } from '../../types/CartItem';
 import { CartItemModal } from '../CartItemModal';
 import { Text } from '../Text';
+import { ProductContext } from '../../contexts/productContext';
 
 import { Item, ProductContainer } from './styles';
 
 export function CartItem() {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [cartItems, setCartItems] = useState<CartItemInterface[]>([
-    {
-      quantity: 1,
-      product: productList[0],
-    },
-    {
-      quantity: 2,
-      product: productList[1],
-    },
-    {
-      quantity: 4,
-      product: productList[2],
-    },
-    {
-      quantity: 5,
-      product: productList[3],
-    },
-  ]);
+  const { cartItems } = useContext(ProductContext);
 
-  // console.log(cartItems);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   function handleOpenModal() {
     setIsModalVisible(true);
@@ -43,17 +24,18 @@ export function CartItem() {
       {isModalVisible && cartItems.length >= 1 &&
         <CartItemModal
           cartItems={cartItems}
-          visible={isModalVisible}
           onClose={handleCloseModal}
         />
       }
 
-      <Item onClick={handleOpenModal} style={{ }}>
+      <Item onClick={handleOpenModal}>
         <ProductContainer>
           {cartItems.length > 0 ? (
-            <Text className='on'>
+            <>
+              <Text className='on'>
               Informações sobre o pedido
-            </Text>
+              </Text>
+            </>
           ) : (
             <div className='off'>
               <Text>

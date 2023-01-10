@@ -10,6 +10,7 @@ import { Text } from '../Text';
 import { Container, OrderContainer, Footer, TabBarContainer } from './styles';
 
 export function Orders() {
+
   return (
     <>
       <GlobalStyles />

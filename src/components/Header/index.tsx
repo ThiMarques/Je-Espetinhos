@@ -6,6 +6,7 @@ import Logo from '../../assets/jeEspetinhos.jpg';
 import { Container, HeaderText, Image } from './styles';
 
 export function Header() {
+
   return (
     <Container>
       <Image src={Logo} alt='Logo Je Espetihnos'/>
