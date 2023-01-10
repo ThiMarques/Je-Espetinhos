@@ -23,7 +23,6 @@ export function CartItem() {
     <>
       {isModalVisible && cartItems.length >= 1 &&
         <CartItemModal
-          cartItems={cartItems}
           onClose={handleCloseModal}
         />
       }

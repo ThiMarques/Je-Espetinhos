@@ -1,12 +1,20 @@
 import React from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { CartItemInterface } from '../../types/CartItem';
+import { formatCurrency } from '../../utils/formatCurrency';
 import { Text } from '../Text';
 
 import {
   DetailsContainer,
   Overlay,
   Address,
+  Items,
+  ItemsContainer,
+  ItemImage,
+  ItemQuantity,
+  ItemContet,
+  Sauce,
+  Soda,
   Payment,
   Request,
   Total
@@ -50,15 +58,69 @@ export function DetailsModal({ visible, onClose, cartItems }: DetailsModalProps)
           <Request
             key={cartItem.product.id}
           >
-            <Text>{cartItem.quantity} x</Text>
-            <Text style={{ marginBottom: 2 }}>{cartItem.product.name}</Text>
-            <Text style={{ marginBottom: 8 }}>{cartItem.product.price}</Text>
+            <Items>
+              <ItemsContainer>
+                <ItemImage>
 
-            <Text style={{ marginBottom: 2 }}>Molhos</Text>
-            <Text style={{ marginBottom: 8 }}><small>Molho barbecue</small></Text>
+                </ItemImage>
 
-            <Text style={{ marginBottom: 2 }}>Bebida</Text>
-            <Text><small>Sem bebida</small></Text>
+                <ItemQuantity>
+                  <Text>{cartItem.quantity} x</Text>
+                </ItemQuantity>
+
+                <ItemContet>
+                  <div className='itemDetail'>
+                    <Text style={{ marginBottom: 2 }}>{cartItem.product.name}</Text>
+                  </div>
+                  <div className='itemPrice'>
+                    <Text style={{ marginBottom: 8 }}>{formatCurrency(cartItem.product.price)}</Text>
+                  </div>
+                </ItemContet>
+              </ItemsContainer>
+
+              <Sauce>
+                <Text style={{ marginBottom: 2 }}>Molhos</Text>
+
+                <div>
+                  {cartItem.product.sauce.length > 0 ? (
+                    <Text style={{ marginBottom: 8 }}>
+                      <small>
+                        {cartItem.product.sauce}
+                      </small>
+                    </Text>
+                  ) : (
+                    <>
+                      <Text style={{ marginBottom: 8 }}>
+                        <small>
+                          Você não selecionou nenhum molho
+                        </small>
+                      </Text>
+                    </>
+                  )}
+                </div>
+              </Sauce>
+
+              <Soda>
+                <Text style={{ marginBottom: 2 }}>Bebida</Text>
+
+                <div>
+                  {cartItem.product.soda.length > 0 ? (
+                    <Text>
+                      <small>
+                        {cartItem.product.soda}
+                      </small>
+                    </Text>
+                  ) : (
+                    <Text style={{ marginBottom: 8 }}>
+                      <small>
+                      Você não selecionou nenhuma bebida
+                      </small>
+                    </Text>
+                  )}
+                </div>
+              </Soda>
+
+            </Items>
           </Request>
         )}
 
@@ -70,17 +132,17 @@ export function DetailsModal({ visible, onClose, cartItems }: DetailsModalProps)
         <Total>
           <div className='sub'>
             <Text>Subtotal</Text>
-            <Text>R$ 6,00</Text>
+            <Text>{formatCurrency(20)}</Text>
           </div>
 
           <div className='taxa'>
             <Text>Taxa de entrega</Text>
-            <Text>R$ 0,00</Text>
+            <Text>{formatCurrency(0)}</Text>
           </div>
 
           <div className='some'>
             <Text>Total</Text>
-            <Text>R$ 6,00</Text>
+            <Text>{formatCurrency(20)}</Text>
           </div>
         </Total>
       </DetailsContainer>

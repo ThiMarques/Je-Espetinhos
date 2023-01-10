@@ -3,8 +3,12 @@ export interface ProductInterface {
   name: string;
   description: string;
   price: number;
-  ingredients: {
-    id: string;
-    name: string;
-  }[];
+  ingredients: [
+    {
+      id: string;
+      sauce: string;
+    }
+  ];
+  soda: string;
+  sauce: string;
 }

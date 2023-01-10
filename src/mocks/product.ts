@@ -18,7 +18,12 @@ export const productList = [
     description: 'Espetinho delicioso de carne',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,
-    ingredients: [],
+    ingredients: [
+      {
+        sauce: 'Molho branco'
+      }
+    ],
+    soda: 'Coca-Cola'
   },
   {
     _id: '019819u3y9123112',
@@ -26,7 +31,14 @@ export const productList = [
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,
-    ingredients: [],
+    ingredients: [
+      {
+        _id: '0654219845641516',
+        sauce: 'Molho branco',
+      }
+    ],
+    soda: 'Coca-Cola',
+    sauce: 'Mostarda',
   },
   {
     _id: '019123123s1983u112',
@@ -34,7 +46,14 @@ export const productList = [
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,
-    ingredients: [],
+    ingredients: [
+      {
+        _id: 'asd84621954',
+        sauce: 'Molho branco',
+      }
+    ],
+    soda: 'Agua',
+    sauce: 'Molho Barbecue',
   },
   {
     _id: '0112312312983u112',

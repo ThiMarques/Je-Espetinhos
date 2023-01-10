@@ -1,7 +1,13 @@
-import React, { useState, useContext } from 'react';
-import { IoIosAddCircleOutline, IoIosRemoveCircleOutline, IoIosArrowRoundBack, IoIosArrowForward } from 'react-icons/io';
-// import { CartItemContext } from '../../Main';
+import React, { useContext, useState } from 'react';
 
+import {
+  IoIosAddCircleOutline,
+  IoIosRemoveCircleOutline,
+  IoIosArrowRoundBack,
+  IoIosArrowForward
+} from 'react-icons/io';
+
+import { ProductContext } from '../../contexts/productContext';
 import { CartItemInterface } from '../../types/CartItem';
 import { formatCurrency } from '../../utils/formatCurrency';
 import { Header } from '../Header';
@@ -28,12 +34,17 @@ import {
 } from './styles';
 
 interface CartItemModalProps {
-  cartItems: CartItemInterface[];
   onClose: () => void;
 }
 
-export function CartItemModal({ cartItems, onClose }: CartItemModalProps) {
+export function CartItemModal({  onClose }: CartItemModalProps) {
+
   const [count, setCount] = useState(1);
+  const { cartItems, setCartItems } = useContext(ProductContext);
+
+  function clearCartItem() {
+    setCartItems([]);
+  }
 
   return (
     <>
@@ -51,7 +62,7 @@ export function CartItemModal({ cartItems, onClose }: CartItemModalProps) {
               Informações sobre o pedido
               </Text>
             </div>
-            <button className='clear' onClick={() => alert('Limpar o pedido')}>
+            <button className='clear' onClick={() => clearCartItem()}>
               <Text size={14} color='#D73035'>Limpar</Text>
             </button>
           </TitleContainer>

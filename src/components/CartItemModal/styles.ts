@@ -86,6 +86,8 @@ export const Title = styled.div`
   align-items: center;
 `;
 
+export const InformationsContainer = styled.div``;
+
 export const Items = styled.div`
   display: flex;
   justify-content: space-between;
@@ -95,7 +97,11 @@ export const Items = styled.div`
   padding: 10px;
   border: 1px solid black;
   border-radius: 4px;
+`;
 
+
+export const ItemsContainer = styled.div`
+  display: flex;
 `;
 
 export const ItemsImage = styled.div`
@@ -105,10 +111,6 @@ export const ItemsImage = styled.div`
     border-radius: 4px;
 
     margin-right: 10px;
-`;
-
-export const ItemsContainer = styled.div`
-  display: flex;
 `;
 
 export const ItemsQuantity = styled.div`
@@ -165,5 +167,3 @@ export const ConfirmOrder = styled.div`
     width: 100%;
   }
 `;
-
-export const InformationsContainer = styled.div``;

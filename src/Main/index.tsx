@@ -52,9 +52,7 @@ export function Main() {
         <FooterContainer>
 
           <CartItemContainer>
-            <CartItem
-              // product={product}
-            />
+            <CartItem />
           </CartItemContainer>
 
           <TabBarContainer>
