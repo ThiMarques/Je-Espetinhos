@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { IoMdClose } from 'react-icons/io';
+import { ProductContext } from '../../contexts/productContext';
 
 import { ProductInterface } from '../../types/Product';
 import { formatCurrency } from '../../utils/formatCurrency';
@@ -22,10 +23,11 @@ interface ProductModalProps {
   visible: boolean;
   onClose: () => void;
   products: null | ProductInterface;
-  onAddToCart: (product: ProductInterface) => void;
 }
 
-export function ProductModal({ visible, onClose, products, onAddToCart }: ProductModalProps) {
+export function ProductModal({ visible, onClose, products }: ProductModalProps) {
+  const { handleAddToCart } = useContext(ProductContext);
+
   if (!products) {
     return null;
   }
@@ -34,8 +36,8 @@ export function ProductModal({ visible, onClose, products, onAddToCart }: Produc
     return null;
   }
 
-  function handleAddToCart() {
-    onAddToCart(products!);
+  function onAddToCart() {
+    handleAddToCart(products!);
     onClose();
   }
 
@@ -71,7 +73,7 @@ export function ProductModal({ visible, onClose, products, onAddToCart }: Produc
               <Text weight="600" size={20}>{formatCurrency(products.price)}</Text>
             </PriceContainer>
 
-            <Button onClick={handleAddToCart}>
+            <Button onClick={() => onAddToCart()}>
               Adicionar ao carrinho
             </Button>
           </FooterContainer>

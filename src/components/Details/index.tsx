@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { ProductContext } from '../../contexts/productContext';
 
 import { DetailsModal } from '../DetailsModal';
-import { Text } from '../Text';
 
 import { DetailsContainer } from './styles';
 

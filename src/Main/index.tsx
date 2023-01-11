@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React from 'react';
 
 import { productList } from '../mocks/product';
 
@@ -7,7 +7,6 @@ import { Categories } from '../components/Categories';
 import { TabBar } from '../components/TabBar';
 import Product from '../components/Product';
 import { CartItem } from '../components/CartItem';
-import { ProductInterface } from '../types/Product';
 
 import { GlobalStyles } from '../styles/GlobalStyles';
 import {
@@ -20,8 +19,6 @@ import {
   FooterContainer
 } from './styles';
 
-// const ProductsCartContext = createContext('light');
-
 export function Main() {
 
   return (
@@ -29,9 +26,7 @@ export function Main() {
       <GlobalStyles />
       <Container>
 
-        {/* <ProductsCartContext.Provider value='dark'> */}
         <Header />
-        {/* </ProductsCartContext.Provider> */}
 
         <CategoriesContainer>
           <Categories />

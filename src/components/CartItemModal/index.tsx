@@ -9,6 +9,7 @@ import {
 
 import { ProductContext } from '../../contexts/productContext';
 import { CartItemInterface } from '../../types/CartItem';
+import { ProductInterface } from '../../types/Product';
 import { formatCurrency } from '../../utils/formatCurrency';
 import { Header } from '../Header';
 import { Text } from '../Text';
@@ -37,10 +38,10 @@ interface CartItemModalProps {
   onClose: () => void;
 }
 
-export function CartItemModal({  onClose }: CartItemModalProps) {
+export function CartItemModal({  onClose }: CartItemModalProps ) {
 
   const [count, setCount] = useState(1);
-  const { cartItems, setCartItems } = useContext(ProductContext);
+  const { cartItems, setCartItems, handleAddToCart, total, handleDecrementCartItem } = useContext(ProductContext);
 
   function clearCartItem() {
     setCartItems([]);
@@ -130,11 +131,11 @@ export function CartItemModal({  onClose }: CartItemModalProps) {
                 </ItemsContainer>
 
                 <Actions>
-                  <button className='funcButton' style={{ marginRight: 24 }} onClick={() => setCount(count + 1)}>
+                  <button className='funcButton' style={{ marginRight: 24 }} onClick={() => handleAddToCart(cartItem.product)}>
                     <IoIosAddCircleOutline />
                   </button>
 
-                  <button className='funcButton' onClick={() => setCount(count - 1)}>
+                  <button className='funcButton' onClick={() => handleDecrementCartItem(cartItem.product)}>
                     <IoIosRemoveCircleOutline />
                   </button>
                 </Actions>
@@ -147,7 +148,7 @@ export function CartItemModal({  onClose }: CartItemModalProps) {
           <Summary>
             <TotalContainer>
               <Text color='#666'>Total</Text>
-              <Text size={20} weight="600">{formatCurrency(120)} { /* (cartItem.product.price * cartItem.quantity) */}</Text>
+              <Text size={20} weight="600">{formatCurrency(total)}</Text>
             </TotalContainer>
 
             <ConfirmOrder>
