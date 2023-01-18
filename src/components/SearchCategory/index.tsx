@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import { categoryList } from '../../mocks/category';
-import { Category } from '../../types/Category';
+import { CategoryInterface } from '../../types/Category';
 import { SearchModal } from '../SearchModal';
-import { TabBar } from '../TabBar';
 import { Text } from '../Text';
 import { SearchCategoryContainer } from './styles';
 
 interface SearchCategoryProps {
-  category: Category;
+  category: CategoryInterface;
 }
 
 export function SearchCategory({ category }: SearchCategoryProps) {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<null | CategoryInterface>(null);
 
-  function handleOpenModal() {
+  function handleOpenModal(category: CategoryInterface) {
     setIsModalVisible(true);
+    setSelectedCategory(category);
   }
 
   function handleCloseModal() {
@@ -26,14 +27,14 @@ export function SearchCategory({ category }: SearchCategoryProps) {
       {categoryList.map((categories) => {
         return <SearchModal
           key={categories._id}
-          categories={categories}
+          categories={selectedCategory}
           visible={isModalVisible}
           onClose={handleCloseModal}
         />;
       })}
 
       <SearchCategoryContainer>
-        <div className='image' onClick={handleOpenModal}>
+        <div className='image' onClick={() => handleOpenModal(category)}>
           <Text style={{ color: '#fafafa' }}>{category.name}</Text>
         </div>
       </SearchCategoryContainer>

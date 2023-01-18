@@ -19,16 +19,4 @@ export const categoryList = [
     _id: '32154as',
     name: 'Refrigerantes'
   },
-  {
-    _id: '36875616',
-    name: 'SOcas'
-  },
-  {
-    _id: '8s',
-    name: 'Pimenta'
-  },
-  {
-    _id: '11984216',
-    name: 'Ultimpo'
-  },
 ];
