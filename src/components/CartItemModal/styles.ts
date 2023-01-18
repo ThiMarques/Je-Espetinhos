@@ -8,6 +8,8 @@ export const Overlay = styled.div`
   background: #fafafa;
   backdrop-filter: blur(4.5px);
   position: fixed;
+
+  overflow: hidden;
 `;
 
 export const InformationContent = styled.div``;
@@ -33,50 +35,6 @@ export const TitleContainer = styled.div`
     border: none;
     background-color: transparent;
   };
-`;
-
-export const AddressContainer = styled.div`
-  /* display: flex; */
-  padding: 8px;
-
-  .options {}
-
-  .button {
-    border: none;
-    background-color: transparent;
-  }
-`;
-
-export const Address = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  margin-top: 12px;
-  height: auto;
-  border: 1px solid black;
-  border-radius: 8px;
-
-  .addressInfo {
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
-  }
-
-  .button {
-    border: none;
-    padding: 8px;
-    background-color: transparent;
-  }
-`;
-
-export const Time = styled.div`
-  margin-top: 12px;
-  padding: 8px;
-  border: 1px solid red;
-  border-radius: 8px;
-
-  display: flex;
-  flex-direction: column;
 `;
 
 export const Title = styled.div`

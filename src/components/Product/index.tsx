@@ -34,7 +34,7 @@ function Product ({ product }: ProductProps) {
     <>
       {productList.map((products) => {
         return <ProductModal
-          key={products._id}
+          key={products.id}
           products={selectedProduct}
           visible={isModalVisible}
           onClose={handleCloseModal}

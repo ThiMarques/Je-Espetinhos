@@ -3,14 +3,12 @@ import React, { useContext, useState } from 'react';
 import {
   IoIosAddCircleOutline,
   IoIosRemoveCircleOutline,
-  IoIosArrowRoundBack,
-  IoIosArrowForward
+  IoIosArrowRoundBack
 } from 'react-icons/io';
 
 import { ProductContext } from '../../contexts/productContext';
-import { CartItemInterface } from '../../types/CartItem';
-import { ProductInterface } from '../../types/Product';
 import { formatCurrency } from '../../utils/formatCurrency';
+import { ConfirmCartItemModal } from '../ConfirmCartItemModal';
 import { Header } from '../Header';
 import { Text } from '../Text';
 
@@ -19,8 +17,6 @@ import {
   InformationContent,
   TitleContainer,
   Items,
-  AddressContainer,
-  Time,
   TotalContainer,
   ConfirmOrder,
   ItemsContent,
@@ -30,7 +26,6 @@ import {
   ItemsImage,
   Summary,
   Title,
-  Address,
   InformationsContainer
 } from './styles';
 
@@ -39,18 +34,32 @@ interface CartItemModalProps {
 }
 
 export function CartItemModal({  onClose }: CartItemModalProps ) {
-
-  const [count, setCount] = useState(1);
   const { cartItems, setCartItems, handleAddToCart, total, handleDecrementCartItem } = useContext(ProductContext);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   function clearCartItem() {
     setCartItems([]);
+  }
+
+  function handleConfirmModalOrder() {
+    setIsModalVisible(true);
+  }
+
+  function handleCloseModalOrder() {
+    setIsModalVisible(false);
   }
 
   return (
     <>
       <Overlay>
         <Header />
+
+        {isModalVisible &&
+          <ConfirmCartItemModal
+            onCloseModal={handleCloseModalOrder}
+          />
+        }
 
         <InformationContent>
 
@@ -68,37 +77,7 @@ export function CartItemModal({  onClose }: CartItemModalProps ) {
             </button>
           </TitleContainer>
 
-          <AddressContainer>
-            <div className='options'>
 
-              <button className='button'>
-                <Text size={18} style={{ marginRight: 8, color: '#D73035' }}>Entrega</Text>
-              </button>
-
-              <button className='button'>
-                <Text size={18}>Retirada</Text>
-
-              </button>
-            </div>
-
-            <Address>
-              <div className='addressInfo'>
-                <Text style={{ marginBottom: 2 }} size={14} color="#666">Entregar em</Text>
-                <Text style={{ marginBottom: 2 }}>R: Gregoria de Fregel, 380</Text>
-                <Text size={14} color="#666">Parque Espacial - Bl 38 Ap 02</Text>
-              </div>
-
-              <button className='button' onClick={() => alert('button')}>
-                <IoIosArrowForward color='#D73035'/>
-              </button>
-            </Address>
-
-            <Time>
-              <Text size={14} color='#D73035'>50 min</Text>
-              <Text size={12} color='#666'>Frete: R$ 12,00</Text>
-            </Time>
-
-          </AddressContainer>
 
           <Title>
             <Text size={20}>
@@ -151,12 +130,12 @@ export function CartItemModal({  onClose }: CartItemModalProps ) {
               <Text size={20} weight="600">{formatCurrency(total)}</Text>
             </TotalContainer>
 
-            <ConfirmOrder>
-              <button className='button' onClick={() => alert('Confirmar pedido')}>
-                Confirmar pedido
-              </button>
-            </ConfirmOrder>
           </Summary>
+          <ConfirmOrder >
+            <button className='button' onClick={() => handleConfirmModalOrder()}>
+              Confirmar pedido
+            </button>
+          </ConfirmOrder>
 
         </InformationContent>
 

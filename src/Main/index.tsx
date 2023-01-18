@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { productList } from '../mocks/product';
-
 import { Header } from '../components/Header';
 import { Categories } from '../components/Categories';
 import { TabBar } from '../components/TabBar';
@@ -20,7 +19,6 @@ import {
 } from './styles';
 
 export function Main() {
-
   return (
     <>
       <GlobalStyles />
@@ -35,7 +33,7 @@ export function Main() {
         <MenuContainer>
           {productList.map((product) => {
             return <Product
-              key={product._id}
+              key={product.id}
               product={product}
             />;
           })}
