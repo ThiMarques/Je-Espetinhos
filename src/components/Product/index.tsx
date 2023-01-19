@@ -3,7 +3,6 @@ import React, { useContext, useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
 import { productList } from '../../mocks/product';
-
 import { Text } from '../Text';
 import { ProductModal } from '../ProductModal';
 import { formatCurrency } from '../../utils/formatCurrency';

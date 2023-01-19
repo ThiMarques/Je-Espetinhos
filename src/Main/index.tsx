@@ -13,8 +13,6 @@ import {
   CategoriesContainer,
   MenuContainer,
   Footer,
-  TabBarContainer,
-  CartItemContainer,
   FooterContainer
 } from './styles';
 
@@ -44,13 +42,13 @@ export function Main() {
       <Footer>
         <FooterContainer>
 
-          <CartItemContainer>
+          <div className='cartItemContainer'>
             <CartItem />
-          </CartItemContainer>
+          </div>
 
-          <TabBarContainer>
+          <div className='tabBarContainer'>
             <TabBar />
-          </TabBarContainer>
+          </div>
 
         </FooterContainer>
       </Footer>

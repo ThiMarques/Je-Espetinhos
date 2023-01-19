@@ -17,6 +17,7 @@ export const ProductContainer = styled.div`
 
     display: flex;
     justify-content: center;
+    /* position: absolute; */
   }
 
   .off {

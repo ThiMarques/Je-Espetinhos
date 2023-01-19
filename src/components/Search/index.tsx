@@ -1,6 +1,7 @@
 import React from 'react';
 import { categoryList } from '../../mocks/category';
 import { GlobalStyles } from '../../styles/GlobalStyles';
+import { CartItem } from '../CartItem';
 
 import { Header } from '../Header';
 import { SearchBar } from '../SearchBar';
@@ -9,7 +10,7 @@ import { TabBar } from '../TabBar';
 import { Text } from '../Text';
 
 import {
-  TabBarContainer,
+  FooterContainer,
   Container,
   SearchBarContainer,
   SearchCategoryContainer,
@@ -37,9 +38,17 @@ export function Search() {
       </Container>
 
       <Footer>
-        <TabBarContainer>
-          <TabBar />
-        </TabBarContainer>
+        <FooterContainer>
+
+          <div className='cartItemContainer'>
+            <CartItem />
+          </div>
+
+          <div className='tabBarContainer'>
+            <TabBar />
+          </div>
+
+        </FooterContainer>
       </Footer>
 
     </>
