@@ -68,7 +68,7 @@ export function ConfirmCartItemModal({ onCloseModal }: ConfirmCartItemModalProps
             <Text size={20}>Selecione a forma de entrega</Text>
 
             <button onClick={() => openAddressModal()}>
-              Adicionar endereco
+              Alterar endereço
             </button>
           </div>
 
@@ -79,7 +79,7 @@ export function ConfirmCartItemModal({ onCloseModal }: ConfirmCartItemModalProps
                 <Text style={{ marginBottom: 2 }}>R: Gregoria de Fregel, 380</Text>
                 <Text size={14} color="#666">Parque Espacial - Bl 38 Ap 02</Text>
               </div>
-              <input type="radio" name='radio' checked/>
+              <input type="radio" name='radio'/>
             </div>
 
             <div className='addressContent'>

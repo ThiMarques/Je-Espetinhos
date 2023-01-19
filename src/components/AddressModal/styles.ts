@@ -13,7 +13,7 @@ export const AddressContent = styled.div`
   .textTitle {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   .button {
@@ -41,5 +41,6 @@ export const InformationAddress = styled.div`
     padding: 8px;
     border-radius: 8px;
     border: solid 1px;
+    height: 4rem;
   }
 `;

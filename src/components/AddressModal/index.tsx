@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoIosArrowRoundBack } from 'react-icons/io';
 
 import { Text } from '../Text';
 
@@ -13,16 +14,20 @@ export function AddressModal({ onCloseAddressModal }: AddressModalProps) {
     <>
       <AddressContent>
         <div className='textTitle'>
+          <div onClick={() => onCloseAddressModal()}>
+            <IoIosArrowRoundBack  style={{ color: 'black' }}/>
+          </div>
           <Text size={20}>
-            Mudar o endereço de entrega
+            Novo endereço
           </Text>
+        </div>
+        <div>
+          <Text size={24} style={{ marginTop: 12, marginBottom: 12 }}>Em qual endereço voce deseja receber o seu pedido?</Text>
         </div>
 
         <InformationAddress>
-          <Text>Endereço</Text>
-          <input type="text" placeholder='Insira o nome da sua rua' style={{ marginTop: 4 }}/>
-          <input type="text" placeholder='Insira o numero da sua casa' style={{ marginTop: 8 }}/>
-          <input type="text" placeholder='Complemento' style={{ marginTop: 8 }}/>
+          <Text>Comece digitando seu endereço:</Text>
+          <input type="text" placeholder='Avenida Paulista, 456, Centro...' style={{ marginTop: 8 }}/>
         </InformationAddress>
 
         <div className='button'>
