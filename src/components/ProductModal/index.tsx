@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import { IoMdClose } from 'react-icons/io';
 import { ProductContext } from '../../contexts/productContext';
+import { sauceList } from '../../mocks/sauce';
 
 import { ProductInterface } from '../../types/Product';
 import { formatCurrency } from '../../utils/formatCurrency';
@@ -12,11 +13,13 @@ import {
   Image,
   InfoContainer,
   Title,
-  Ingredients,
   Footer,
   FooterContainer,
   PriceContainer,
-  Button
+  Button,
+  SauceContainer,
+  Sauce,
+  SauceList
 } from './styles';
 
 interface ProductModalProps {
@@ -55,7 +58,7 @@ export function ProductModal({ visible, onClose, products }: ProductModalProps) 
           <Text color='#666' style={{ marginTop: 8 }}>{products.description}</Text>
         </Title>
 
-        {products.ingredients.length > 0 && (
+        {/* {products.ingredients.length > 0 && (
           <Ingredients>
             <Text weight='600' color='#666' style={{ marginBottom: 16 }}>Ingredientes</Text>
             <div className='itemsContainer'>
@@ -64,7 +67,26 @@ export function ProductModal({ visible, onClose, products }: ProductModalProps) 
               </div>
             </div>
           </Ingredients>
-        )}
+        )} */}
+
+        <SauceContainer>
+          <Text size={24}>Vai um molho ?</Text>
+          <Text color='#666' style={{ marginTop: 4 }}>
+            Você pode escolher ate 4(quatro) molhos de sua preferencia.
+            <br />
+            Mais de 4(quatro) ira ser adicionado o preço do molho.
+          </Text>
+          <SauceList>
+            {sauceList.map((sauce) => (
+              <Sauce
+                key={sauce.id}
+              >
+                <Text size={18} style={{ marginBottom: 16 }}>{sauce.name}</Text>
+                <input type='radio' style={{ marginBottom: 16 }}/>
+              </Sauce>
+            ))}
+          </SauceList>
+        </SauceContainer>
 
         <Footer>
           <FooterContainer>
@@ -78,6 +100,7 @@ export function ProductModal({ visible, onClose, products }: ProductModalProps) 
             </Button>
           </FooterContainer>
         </Footer>
+
       </InfoContainer>
 
     </Overlay>

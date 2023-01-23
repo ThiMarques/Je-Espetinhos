@@ -6,12 +6,7 @@ export const productList = [
     description: 'Coca cola lata geladinha topzera',
     imagePath: '1668473462705-coca-cola.png',
     price: 8,
-    ingredients: [
-      {
-        id: '121852',
-        name: 'pao de alho'
-      }
-    ],
+    ingredients: [],
   },
   {
     id: '019873812bdajs1983u112',
@@ -20,12 +15,7 @@ export const productList = [
     description: 'Espetinho delicioso de carne',
     imagePath: '1668473462705-coca-cola.png',
     price: 3,
-    ingredients: [
-      {
-        sauce: 'Molho branco'
-      }
-    ],
-    soda: 'Coca-Cola'
+    ingredients: [],
   },
   {
     id: '019819u3y9123112',
@@ -34,14 +24,7 @@ export const productList = [
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,
-    ingredients: [
-      {
-        id: '0654219845641516',
-        sauce: 'Molho branco',
-      }
-    ],
-    soda: 'Coca-Cola',
-    sauce: 'Mostarda',
+    ingredients: [],
   },
   {
     id: '019123123s1983u112',
@@ -50,14 +33,7 @@ export const productList = [
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 8,
-    ingredients: [
-      {
-        id: 'asd84621954',
-        sauce: 'Molho branco',
-      }
-    ],
-    soda: 'Agua',
-    sauce: 'Molho Barbecue',
+    ingredients: [],
   },
   {
     id: '0112312312983u112',
@@ -75,11 +51,7 @@ export const productList = [
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 10,
-    ingredients: [
-      {
-        name: 'pao e alho',
-      }
-    ],
+    ingredients: [],
   },
   {
     id: '0112312312983u112',
@@ -97,6 +69,15 @@ export const productList = [
     description: 'Suco de laranja docinho',
     imagePath: '1668473462705-coca-cola.png',
     price: 5,
+    ingredients: [],
+  },
+  {
+    id: '0112312312982223u112',
+    name: 'Lanche de linguica',
+    category: 'Lanche',
+    description: 'Espetinho delicioso',
+    imagePath: '1668473462705-coca-cola.png',
+    price: 7,
     ingredients: [],
   },
 ];
