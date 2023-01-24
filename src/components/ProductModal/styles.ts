@@ -116,8 +116,7 @@ export const Footer = styled.div`
 export const FooterContainer = styled.footer`
   display: flex;
   position: fixed;
-  background-color: red;
-  /* background-color: #fafafa; */
+  background-color: #fafafa;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
