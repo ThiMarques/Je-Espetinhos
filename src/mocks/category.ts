@@ -1,22 +1,22 @@
 export const categoryList = [
   {
-    _id: '87862166',
+    _id: '0',
     name: 'Espetinho Tradicionais'
   },
   {
-    _id: '6546a4ca4',
+    _id: '1',
     name: 'Espetinho Especiais'
   },
   {
-    _id: '435a1sd1a',
+    _id: '2',
     name: 'Lanche'
   },
   {
-    _id: '5asdasc45a',
-    name: 'Sucos'
+    _id: '3',
+    name: 'bebida'
   },
   {
-    _id: '32154as',
-    name: 'Refrigerantes'
+    _id: '4',
+    name: 'bebida'
   },
 ];

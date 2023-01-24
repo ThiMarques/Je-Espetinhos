@@ -1,8 +1,10 @@
+import { categoryList } from './category';
+
 export const productList = [
   {
     id: '6372e276a381106c0f854cb3',
     name: 'Coca cola',
-    category: 'Refrigerante',
+    category: categoryList[4],
     description: 'Coca cola lata geladinha topzera',
     imagePath: '1668473462705-coca-cola.png',
     price: 8,
@@ -11,7 +13,7 @@ export const productList = [
   {
     id: '019873812bdajs1983u112',
     name: 'Espetinho Carne muito bom',
-    category: 'Espetinho tradicional',
+    category: categoryList[0],
     description: 'Espetinho delicioso de carne',
     imagePath: '1668473462705-coca-cola.png',
     price: 3,
@@ -20,7 +22,7 @@ export const productList = [
   {
     id: '019819u3y9123112',
     name: 'Espetinho Frango',
-    category: 'Espetinho tradicional',
+    category: categoryList[0],
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,
@@ -29,7 +31,7 @@ export const productList = [
   {
     id: '019123123s1983u112',
     name: 'Espetinho de Kafta',
-    category: 'Espetinho tradicional',
+    category: categoryList[0],
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 8,
@@ -38,7 +40,7 @@ export const productList = [
   {
     id: '0112312312983u112',
     name: 'Espetinho de Linguiça',
-    category: 'Espetinho tradicional',
+    category: categoryList[0],
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 7,
@@ -47,7 +49,7 @@ export const productList = [
   {
     id: '789218721894',
     name: 'Espetinho de Pao de Alho',
-    category: 'Espetinho especial',
+    category: categoryList[1],
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 10,
@@ -56,7 +58,7 @@ export const productList = [
   {
     id: '0112312312983u112',
     name: 'Lanche de carne',
-    category: 'Lanche',
+    category: categoryList[2],
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
     price: 6,
@@ -65,7 +67,7 @@ export const productList = [
   {
     id: '564656465',
     name: 'Suco de laranja',
-    category: 'Suco',
+    category: categoryList[3],
     description: 'Suco de laranja docinho',
     imagePath: '1668473462705-coca-cola.png',
     price: 5,
@@ -74,10 +76,10 @@ export const productList = [
   {
     id: '0112312312982223u112',
     name: 'Lanche de linguica',
-    category: 'Lanche',
+    category: categoryList[2],
     description: 'Espetinho delicioso',
     imagePath: '1668473462705-coca-cola.png',
-    price: 7,
+    price: 7   ,
     ingredients: [],
   },
 ];
