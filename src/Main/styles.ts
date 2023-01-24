@@ -41,7 +41,6 @@ export const FooterContainer = styled.footer`
   left: 0px;
   right: 0px;
   justify-content: space-around;
-  z-index: 1000;
   box-shadow: 0 1px 3px rgb(0 0 0 / 24%);
 
   .cartItemContainer {

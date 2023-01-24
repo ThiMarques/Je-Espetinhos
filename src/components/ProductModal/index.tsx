@@ -88,20 +88,20 @@ export function ProductModal({ visible, onClose, products }: ProductModalProps) 
           </SauceList>
         </SauceContainer>
 
-        <Footer>
-          <FooterContainer>
-            <PriceContainer>
-              <Text weight='400' color='#666'>Preço</Text>
-              <Text weight="600" size={20}>{formatCurrency(products.price)}</Text>
-            </PriceContainer>
-
-            <Button onClick={() => onAddToCart()}>
-              Adicionar ao carrinho
-            </Button>
-          </FooterContainer>
-        </Footer>
-
       </InfoContainer>
+
+      <Footer>
+        <FooterContainer>
+          <PriceContainer>
+            <Text weight='400' color='#666'>Preço</Text>
+            <Text weight="600" size={20}>{formatCurrency(products.price)}</Text>
+          </PriceContainer>
+
+          <Button onClick={() => onAddToCart()}>
+              Adicionar ao carrinho
+          </Button>
+        </FooterContainer>
+      </Footer>
 
     </Overlay>
   );

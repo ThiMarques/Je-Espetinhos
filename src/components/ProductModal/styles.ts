@@ -45,6 +45,7 @@ export const InfoContainer = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 32px;
+  overflow: scroll;
 
   position: absolute;
   height: 361px;
@@ -84,19 +85,45 @@ export const Ingredients = styled.div`
   }
 `;
 
+export const SauceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+`;
+
+export const SauceList = styled.div`
+  overflow: scroll;
+  max-height: 350px;
+  margin-top: 16px;
+`;
+
+export const Sauce = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 16px;
+  width: 100%;
+  border-bottom: 1px solid rgb(239, 38, 38);
+`;
+
 export const Footer = styled.div`
   min-height: 110px;
-  background-color: #fafafa;
+  background-color: #fff;
   padding: 16px 24px;
-  width: 100%;
-`;
+  `;
 
 export const FooterContainer = styled.footer`
   display: flex;
+  position: fixed;
+  background-color: red;
+  /* background-color: #fafafa; */
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 110px;
+
+  padding: 16px;
+  height: 90px;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -115,24 +142,4 @@ export const Button = styled.button`
 
   padding: 8px;
   border-radius: 8px;
-`;
-
-export const SauceContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
-export const SauceList = styled.div`
-  overflow: scroll;
-  max-height: 350px;
-`;
-
-export const Sauce = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  margin-top: 16px;
-  width: 100%;
-  border-bottom: 1px solid rgb(239, 38, 38);
 `;
