@@ -9,6 +9,8 @@ export const AddressContent = styled.div`
   height: 100%;
 
   padding: 8px;
+  overflow: scroll;
+  padding-bottom: 150px;
 
   .textTitle {
     display: flex;
@@ -37,10 +39,17 @@ export const InformationAddress = styled.div`
 
   margin-top: 8px;
 
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
   input {
     padding: 8px;
     border-radius: 8px;
     border: solid 1px;
     height: 4rem;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 `;

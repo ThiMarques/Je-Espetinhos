@@ -6,6 +6,8 @@ export const PageContent = styled.div`
   height: 100%;
   top: 0;
   left: 0;
+  overflow: scroll;
+  padding-bottom: 150px;
 `;
 
 export const TitleContainer = styled.div`
@@ -91,6 +93,11 @@ export const Address = styled.div`
       position: relative;
     }
   }
+`;
+
+export const AddressInformation = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ObservationContainer = styled.div`

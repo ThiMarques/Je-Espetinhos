@@ -30,6 +30,8 @@ export function SearchModal({ visible, onClose, categories }: SearchModalProps) 
         <Text weight='700'>{categories.name}</Text>
       </Image>
 
+
+
       <ProductContainer>
         {productList.map((product) => {
           return <Product

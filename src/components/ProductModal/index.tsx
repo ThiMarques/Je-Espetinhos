@@ -56,8 +56,6 @@ export function ProductModal({ visible, onClose, products }: ProductModalProps) 
         <Title>
           <Text weight='600' size={24}>{products.name}</Text>
           <Text color='#666' style={{ marginTop: 8 }}>{products.description}</Text>
-
-
         </Title>
 
         {/* {products.ingredients.length > 0 && (
@@ -75,7 +73,7 @@ export function ProductModal({ visible, onClose, products }: ProductModalProps) 
           <SauceContainer>
             <Text size={24}>Vai um molho ?</Text>
             <Text color='#666' style={{ marginTop: 4 }}>
-            Você pode escolher ate 4(quatro) molhos de sua preeferencia.
+            Você pode escolher ate 4(quatro) molhos de sua preferencia.
               <br />
             Mais de 4(quatro) ira ser adicionado o preço do molho.
             </Text>
@@ -91,7 +89,6 @@ export function ProductModal({ visible, onClose, products }: ProductModalProps) 
             </SauceList>
           </SauceContainer>
         )}
-
 
       </InfoContainer>
 

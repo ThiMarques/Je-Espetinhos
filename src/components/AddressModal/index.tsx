@@ -10,6 +10,7 @@ interface AddressModalProps {
 }
 
 export function AddressModal({ onCloseAddressModal }: AddressModalProps) {
+
   return (
     <>
       <AddressContent>
@@ -26,12 +27,33 @@ export function AddressModal({ onCloseAddressModal }: AddressModalProps) {
         </div>
 
         <InformationAddress>
-          <Text>Comece digitando seu endereço:</Text>
-          <input type="text" placeholder='Avenida Paulista, 456, Centro...' style={{ marginTop: 8 }}/>
+          <div>
+            <label>Comece digitando seu endereço:</label>
+            <input
+              type="text"
+              placeholder='R: Gregoria de Fregel'
+              style={{ marginTop: 8 }}
+            />
+
+            <label>Numero da residencia</label>
+            <input type="text" placeholder='123'/>
+
+            <label>Complemento</label>
+            <input type='text' placeholder='Bloco, apartamento'/>
+
+            <label>Ponto de referencia</label>
+            <input type='text' placeholder='Em frente ao'/>
+
+            <label>Bairro</label>
+            <input type='text' placeholder='Bairro'/>
+
+            <label>Cidade</label>
+            <input type='text' placeholder='Cidade'/>
+          </div>
         </InformationAddress>
 
-        <div className='button'>
-          <button onClick={() => onCloseAddressModal()}>
+        <div className='button' >
+          <button onClick={() => alert('Trocou o endereco')}>
             Confirmar endereço
           </button>
         </div>
