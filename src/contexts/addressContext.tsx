@@ -5,12 +5,8 @@ export const AddressContext = createContext({});
 export function AddressProvider({children}) {
   const [address, setAddress] = useState('');
 
-  function changeAddress() {
-    setAddress('');
-  }
-
   return (
-    <AddressContext.Provider value={{ address, setAddress, changeAddress  }}>
+    <AddressContext.Provider value={{ address, setAddress  }}>
       {children}
     </AddressContext.Provider>
   );

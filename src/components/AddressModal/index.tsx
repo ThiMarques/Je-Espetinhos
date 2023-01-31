@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IoIosArrowRoundBack } from 'react-icons/io';
+import { AddressContext } from '../../contexts/addressContext';
 
 import { Text } from '../Text';
 
@@ -10,6 +11,17 @@ interface AddressModalProps {
 }
 
 export function AddressModal({ onCloseAddressModal }: AddressModalProps) {
+  const { address, setAddress } = useContext(AddressContext);
+
+  const handleChange = (event) => {
+    setAddress(event.target.value);
+  };
+
+  const confirmClose = () => {
+    alert('Seu endereco foi confirmado');
+    onCloseAddressModal();
+  };
+
 
   return (
     <>
@@ -28,14 +40,17 @@ export function AddressModal({ onCloseAddressModal }: AddressModalProps) {
 
         <InformationAddress>
           <div>
-            <label>Comece digitando seu endereço:</label>
+            <label>Digite seu endereço aqui:</label>
             <input
               type="text"
+              id='address'
+              name='address'
+              onChange={handleChange}
               placeholder='R: Gregoria de Fregel'
               style={{ marginTop: 8 }}
             />
 
-            <label>Numero da residencia</label>
+            {/* <label>Numero da residencia</label>
             <input type="text" placeholder='123'/>
 
             <label>Complemento</label>
@@ -48,12 +63,12 @@ export function AddressModal({ onCloseAddressModal }: AddressModalProps) {
             <input type='text' placeholder='Bairro'/>
 
             <label>Cidade</label>
-            <input type='text' placeholder='Cidade'/>
+            <input type='text' placeholder='Cidade'/> */}
           </div>
         </InformationAddress>
 
         <div className='button' >
-          <button onClick={() => alert('Trocou o endereco')}>
+          <button onClick={confirmClose}>
             Confirmar endereço
           </button>
         </div>

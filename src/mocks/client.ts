@@ -4,16 +4,16 @@ export const clienlist = [
     name: 'Thiago',
     email: 'thimarsilva18@gmail.com',
     phone: '991960804',
-    address: [
-      {
-        id: 11,
-        street: 'R: Curirim tacaro',
-        number: 123,
-        complement: 'bl: 38 ap: 02',
-        district: 'Demarchi',
-        city: 'Sao Bernardo do Campo'
-      }
-    ]
+    // address: [
+    //   {
+    //     id: 11,
+    //     street: 'R: Curirim tacaro',
+    //     number: 123,
+    //     complement: 'bl: 38 ap: 02',
+    //     district: 'Demarchi',
+    //     city: 'Sao Bernardo do Campo'
+    //   }
+    // ]
   },
   // {
   //   id: 2,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { IoIosArrowRoundBack } from 'react-icons/io';
 
@@ -17,6 +17,7 @@ import {
   ObservationContainer,
   InformationContainer
 } from './styels';
+import { AddressContext } from '../../contexts/addressContext';
 
 interface ConfirmCartItemModalProps {
   onCloseModal: () => void;
@@ -24,6 +25,7 @@ interface ConfirmCartItemModalProps {
 
 export function ConfirmCartItemModal({ onCloseModal }: ConfirmCartItemModalProps) {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const { address, setAddress } = useContext(AddressContext);
 
   function openAddressModal() {
     setIsModalVisible(true);
@@ -35,6 +37,7 @@ export function ConfirmCartItemModal({ onCloseModal }: ConfirmCartItemModalProps
 
   function ConfirmOrder() {
     alert('Seu pedido foi feito');
+    closeAddressModal();
   }
 
   return (
@@ -95,8 +98,9 @@ export function ConfirmCartItemModal({ onCloseModal }: ConfirmCartItemModalProps
                   <div className='addressContent' style={{ marginBottom: 8 }}>
                     <div className='addressInfo'>
                       <Text style={{ marginBottom: 2 }} size={14} color="#666">Entregar em</Text>
+                      <Text>{address}</Text>
                       <Text style={{ marginBottom: 2 }}>
-                        {client.address.map((address) => {
+                        {/* {client.address.map((address) => {
                           return (
                             <AddressInformation
                               key={address.id}
@@ -105,7 +109,7 @@ export function ConfirmCartItemModal({ onCloseModal }: ConfirmCartItemModalProps
                               <Text size={14} color="#666">{address.district} ,{address.city}</Text>
                             </AddressInformation>
                           );
-                        })}
+                        })} */}
                       </Text>
                     </div>
                     <input type="radio" name='radio'/>
@@ -137,7 +141,7 @@ export function ConfirmCartItemModal({ onCloseModal }: ConfirmCartItemModalProps
 
         <ConfirmContent>
           <button onClick={() => ConfirmOrder()}>
-          Confirmar pedido !
+            Confirmar pedido !
           </button>
         </ConfirmContent>
       </PageContent>

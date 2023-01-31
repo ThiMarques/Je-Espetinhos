@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 import { productList } from '../mocks/product';
 import { Header } from '../components/Header';
@@ -17,6 +18,13 @@ import {
 } from './styles';
 
 export function Main() {
+  // useEffect(() => {
+  //   axios.get('http://localhost:2300/categories').then((response) => {
+  //     response.data;
+  //     console.log('Promise resolvida');
+  //   });
+  // }, []);
+
   return (
     <>
       <GlobalStyles />
